@@ -73,7 +73,10 @@ PRONUNCIACION_GITHUB_TOKEN=<pat>
 Dokumentasi endpoint & kontrak: `docs/api/29-api-pronunciation-audio.md`
 (di monorepo SambasKu) dan ringkasan di `api/README.md`.
 
-## Lisensi / atribusi
+## Lisensi
 
-Rekaman dikirim kontributor SambasKu untuk keperluan kamus. Metadata penutur
-(`speaker_name`) ada di database API, bukan di path file.
+Kode & dokumentasi repo ini dilisensikan di bawah **MIT** — lihat
+[`LICENSE`](./LICENSE).
+
+Rekaman audio dikirim kontributor SambasKu untuk keperluan kamus. Metadata
+penutur (`speaker_name`) ada di database API, bukan di path file.

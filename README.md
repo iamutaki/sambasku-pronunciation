@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="logo.png" alt="SambasKu" width="320" />
+</p>
+
 # SambasKu Pronunciation
 
 Repositori **penyimpanan file audio pelafalan** untuk aplikasi **SambasKu**
@@ -15,7 +19,8 @@ merekam / mengirim pelafalan kata atau contoh kalimat.
 | Mobile (Flutter) | Sheet rekam pelafalan → endpoint yang sama |
 | Backend API | Menerima multipart → menulis file ke repo ini lewat **GitHub Contents API** |
 
-Repo ini harus **publik** agar client bisa memutar file lewat URL raw GitHub.
+Repo ini harus **publik** agar client bisa memutar file lewat **jsDelivr CDN**
+(`cdn.jsdelivr.net/gh/…`).
 
 ## Struktur path
 
@@ -41,23 +46,27 @@ assets/audio/sambas-kota/makatn/01HABC….wav
 ## URL publik (dipakai client)
 
 ```text
-https://raw.githubusercontent.com/iamutaki/sambasku-pronunciation/main/<path>
+https://cdn.jsdelivr.net/gh/iamutaki/sambasku-pronunciation@main/<path>
 ```
 
 Contoh:
 
 ```text
-https://raw.githubusercontent.com/iamutaki/sambasku-pronunciation/main/assets/audio/umum/makatn/01HXYZ….m4a
+https://cdn.jsdelivr.net/gh/iamutaki/sambasku-pronunciation@main/assets/audio/umum/makatn/01HXYZ….m4a
 ```
 
 URL lengkap disimpan di baris tabel `word_audios.url` pada database SambasKu
 (Turso / SQLite), bersama metadata (MIME, ukuran, penutur, `example_id`, dll.).
+Path relatif tetap ada di `provider_file_id` bila basis URL CDN diganti nanti.
+
+> Catatan: file baru bisa butuh beberapa detik sampai jsDelivr mengindeks
+> commit GitHub; path ULID immutable jadi cache CDN aman setelah itu.
 
 ## Yang tidak dilakukan di repo ini
 
 - Tidak ada UI upload manual yang didukung sebagai alur produksi
 - Tidak menyimpan notasi IPA (itu tabel `pronunciations` di API)
-- Jangan rename / pindah file yang sudah di-referensi DB — URL raw akan putus
+- Jangan rename / pindah file yang sudah di-referensi DB — URL CDN akan putus
 
 ## Akses API (server saja)
 

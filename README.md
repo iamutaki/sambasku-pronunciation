@@ -46,13 +46,13 @@ assets/audio/sambas-kota/makatn/01HABC….wav
 ## URL publik (dipakai client)
 
 ```text
-https://cdn.jsdelivr.net/gh/iamutaki/sambasku-pronunciation@main/<path>
+https://cdn.jsdelivr.net/gh/sambasku/audios@main/<path>
 ```
 
 Contoh:
 
 ```text
-https://cdn.jsdelivr.net/gh/iamutaki/sambasku-pronunciation@main/assets/audio/umum/makatn/01HXYZ….m4a
+https://cdn.jsdelivr.net/gh/sambasku/audios@main/assets/audio/umum/makatn/01HXYZ….m4a
 ```
 
 URL lengkap disimpan di baris tabel `word_audios.url` pada database SambasKu
@@ -75,7 +75,7 @@ repo ini. Variabel lingkungan (di API / Workers):
 
 ```env
 PRONUNCIACION_PROVIDER=github
-PRONUNCIACION_GITHUB_URL=https://github.com/iamutaki/sambasku-pronunciation
+PRONUNCIACION_GITHUB_URL=https://github.com/sambasku/audios
 PRONUNCIACION_GITHUB_TOKEN=<pat>
 ```
 
